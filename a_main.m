@@ -23,8 +23,6 @@ disp(' ');
 disp('Assignment 3 for Advanced Econometrics (1)');
 disp('Research Replication');
 disp(' ');
-disp('Xingyu Li    1400017425    Yuanpei College, Peking University');
-disp(' ');
 disp('Original Work:');
 disp('Hansen, P. R., Huang, Z., & Shek, H. H. (2012). Realized GARCH:');
 disp('A joint model for returns and realized measures of volatility.');
