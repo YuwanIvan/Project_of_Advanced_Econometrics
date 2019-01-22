@@ -123,19 +123,21 @@ fig=figure;
 fig.PaperSize=[6,4.5];
 fig.PaperPosition=[0.1, 0.1, 5.8, 4.3];
 
-data=csvread('hhs_data\SPY.csv');
+data=csvread('hhs_data/SPY.csv');
 date=data(:,1);
 ocret=data((date<20080000),2);
 x=data((date<20080000),3);
 [z,vz1]=RG12N(ocret,x);
 
-data=csvread('hhs_data\IBM.csv');
+data=csvread('hhs_data/IBM.csv');
 date=data(:,1);
 ocret=data((date<20080000),2);
 x=data((date<20080000),3);
 [z,vz2]=RG12N(ocret,x);
 
-plot(z,vz1,'r-',z,vz2,'b-');
+plot(z,vz1,'-',z,vz2,'--');
+set(gca,'XAxisLocation','origin');
+set(gca,'YAxisLocation','origin');
 title('Figure 1: News Impact Curve');
 xlabel('z');
 ylabel('v(z)');
@@ -185,11 +187,7 @@ end
 
 clear all
 
-fig=figure;
-fig.PaperSize=[6,4.5];
-fig.PaperPosition=[0.1, 0.1, 5.8, 4.3];
-
-data=csvread('hhs_data\SPY.csv');
+data=csvread('hhs_data/SPY.csv');
 date=data(:,1);
 ocret=data((date<20080000),2);
 x=data((date<20080000),3);
@@ -197,15 +195,38 @@ x=data((date<20080000),3);
 [~,~,~,~,~,~,~,~,h1]=RG12lin(ocret,x,0);
 [~,~,~,~,~,~,~,~,h2]=RG12(ocret,x,0);
 
+figure
+title('Figure 2: Heteroskedasticity in measurement equation');
+
+subplot(1,2,1);
 plot(h1,x,'r.');
-title('Figure 2(1): Linear Model');
+set(gca,'XAxisLocation','origin');
+set(gca,'YAxisLocation','origin');
+set(gcf,'position',[200,100,800,350]);
+title('Figure 2(1): Linear Model: x against h');
+refline([0,2]);
+refline([0,4]);
+refline([0,6]);
+refline([0,8]);
+refline([0,10]);
+refline([0,12]);
+refline([0,14]);
 xlabel('h');
 ylabel('x');
 print('-dpdf','Figure_2(1).pdf');
 
-
+subplot(1,2,2);
 plot(log(h2),log(x),'r.');
-title('Figure 2(2): Log-linear Model');
+set(gca,'XAxisLocation','origin');
+set(gca,'YAxisLocation','origin');
+set(gcf,'position',[200,100,800,350]);
+title('Figure 2(2): Log-linear Model: log(x) against log(h)');
+refline([0,1]);
+refline([0,2]);
+refline([0,3]);
+refline([0,-1]);
+refline([0,-2]);
+refline([0,-3]);
 xlabel('log(h)');
 ylabel('log(x)');
 print('-dpdf','Figure_2(2).pdf');
@@ -222,7 +243,7 @@ fig=figure;
 fig.PaperSize=[6,4.5];
 fig.PaperPosition=[0.1, 0.1, 5.8, 4.3];
 
-data=csvread('hhs_data\SPY.csv');
+data=csvread('hhs_data/SPY.csv');
 date=data(:,1);
 ocret=data((date<20080000),2);
 x=data((date<20080000),3);
@@ -232,26 +253,50 @@ x=data((date<20080000),3);
 [~,z1,u1]=RG12lind(ocret,x);
 [~,z3,u3]=RG12d(ocret,x);
 
+subplot(2,2,1);
 plot(z1,u1,'b.');
-title('Figure 3(1)');
+set(gca,'XAxisLocation','origin');
+set(gca,'YAxisLocation','origin');
+set(gca,'xtick',[],'xticklabel',[]);
+set(gca,'ytick',[],'yticklabel',[]);
+set(gcf,'position',[200,100,800,800]);
+title('Figure 3(1):Linear specification without leverage function');
 xlabel('z');
 ylabel('u');
 print('-dpdf','Figure_3(1).pdf');
 
+subplot(2,2,2);
 plot(z2,u2,'b.');
-title('Figure 3(2)');
+set(gca,'XAxisLocation','origin');
+set(gca,'YAxisLocation','origin');
+set(gca,'xtick',[],'xticklabel',[]);
+set(gca,'ytick',[],'yticklabel',[]);
+set(gcf,'position',[200,100,800,800]);
+title('Figure 3(2):Linear specification with quadratic leverage function');
 xlabel('z');
 ylabel('u');
 print('-dpdf','Figure_3(2).pdf');
 
+subplot(2,2,3);
 plot(z3,u3,'b.');
-title('Figure 3(3)');
+set(gca,'XAxisLocation','origin');
+set(gca,'YAxisLocation','origin');
+set(gca,'xtick',[],'xticklabel',[]);
+set(gca,'ytick',[],'yticklabel',[]);
+set(gcf,'position',[200,100,800,800]);
+title('Figure 3(3):Log-linear specification without leverage function');
 xlabel('z');
 ylabel('u');
 print('-dpdf','Figure_3(3).pdf');
 
+subplot(2,2,4);
 plot(z4,u4,'b.');
-title('Figure 3(4)');
+set(gca,'XAxisLocation','origin');
+set(gca,'YAxisLocation','origin');
+set(gca,'xtick',[],'xticklabel',[]);
+set(gca,'ytick',[],'yticklabel',[]);
+set(gcf,'position',[200,100,800,800]);
+title('Figure 3(4):Log-linear specification with quadratic leverage function');
 xlabel('z');
 ylabel('u');
 print('-dpdf','Figure_3(4).pdf');
