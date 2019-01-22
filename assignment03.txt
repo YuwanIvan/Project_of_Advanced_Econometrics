@@ -1,0 +1,1166 @@
+***********************************************************************
+ 
+Assignment 3 for Advanced Econometrics (1)
+Research Replication
+ 
+Xingyu Li    1400017425    Yuanpei College, Peking University
+ 
+Original Work:
+Hansen, P. R., Huang, Z., & Shek, H. H. (2012). Realized GARCH:
+A joint model for returns and realized measures of volatility.
+Journal of Applied Econometrics, 27(6), 877-906.
+ 
+***********************************************************************
+ 
+=================================================================
+ 
+Table 2: Log-linear Models for SPY
+ 
+(1) Open-to-close returns 
+ 
+---------------------
+GARCH(1,1) Model
+ 
+[omega, beta1, alpha] =
+    0.0233    0.9723    0.0170
+
+ 
+std. err. =
+    3.1586    0.0094    0.0312
+
+ 
+l(r) =
+  -1.7827e+03
+
+ 
+pi =
+    0.9893
+
+ 
+---------------------
+RealGARCH(1,1) Model
+ 
+[omega, beta1, gamma1, xi, phi, tau1, tau2, sig2_u] =
+    0.0590    0.5508    0.4091   -0.1801    1.0367   -0.0669    0.0723    0.2928
+
+ 
+std. err. =
+    0.0004    0.0000    0.0003    0.0009    0.0010    0.0029    0.0001    0.0003
+
+ 
+l(r,x) =
+  -2.9183e+03
+
+ 
+l(r) =
+  -1.7152e+03
+
+ 
+pi =
+    0.9750
+
+ 
+rho =
+   -0.2325
+
+ 
+rho+ =
+    0.1782
+
+ 
+rho- =
+   -0.4311
+
+ 
+---------------------
+RealGARCH(1,2) Model
+ 
+[omega, beta1, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u] =
+    0.0403    0.7008    0.4495   -0.1748   -0.1768    1.0384   -0.0676    0.0699    0.2908
+
+ 
+std. err. =
+    0.0016    0.0239    0.0027    0.0430    0.0181    0.0118    0.0018    0.0068    0.0002
+
+ 
+l(r,x) =
+  -2.9116e+03
+
+ 
+l(r) =
+  -1.7136e+03
+
+ 
+pi =
+    0.9861
+
+ 
+rho =
+   -0.2354
+
+ 
+rho+ =
+    0.1679
+
+ 
+rho- =
+   -0.4309
+
+ 
+---------------------
+RealGARCH(2,1) Model
+ 
+[omega, beta1, beta2, gamma1, xi, phi, tau1, tau2, sig2_u] =
+    0.0628    0.3986    0.1307    0.4305   -0.1793    1.0370   -0.0674    0.0713    0.2916
+
+ 
+std. err. =
+    0.0001    0.0018    0.0013    0.0017    0.0003    0.0023    0.0002    0.0000    0.0001
+
+ 
+l(r,x) =
+  -2.9147e+03
+
+ 
+l(r) =
+  -1.7146e+03
+
+ 
+pi =
+    0.9757
+
+ 
+rho =
+   -0.2343
+
+ 
+rho+ =
+    0.1735
+
+ 
+rho- =
+   -0.4316
+
+ 
+---------------------
+RealGARCH(2,2) Model
+ 
+[omega, beta1, beta2, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u] =
+    0.0028    1.4200   -0.4405    0.4235   -0.4042   -0.1601    1.0426   -0.0673    0.0697    0.2892
+
+ 
+std. err. =
+    0.0000    0.0067    0.0043    0.0018    0.0011    0.0021    0.0032    0.0001    0.0000    0.0001
+
+ 
+l(r,x) =
+  -2.9068e+03
+
+ 
+l(r) =
+  -1.7130e+03
+
+ 
+pi =
+    0.9996
+
+ 
+rho =
+   -0.2353
+
+ 
+rho+ =
+    0.1699
+
+ 
+rho- =
+   -0.4276
+
+ 
+---------------------
+RealGARCH(2,2) Model without leverage
+ 
+[omega, beta1, beta2, gamma1, gamma2, xi, phi, sig2_u] =
+    0.0080    1.2698   -0.3372    0.4144   -0.3538   -0.1537    1.0715    0.3364
+
+ 
+std. err. =
+    0.0002    0.0376    0.0174    0.0090    0.0116    0.0080    0.0051    0.0004
+
+ 
+l(r,x) =
+  -3.0188e+03
+
+ 
+l(r) =
+  -1.7118e+03
+
+ 
+pi =
+    0.9977
+
+ 
+---------------------
+RealGARCH(2,2) Model with lagged returns
+ 
+[omega, beta1, beta2, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u, alpha] =
+    0.0026    1.4228   -0.4427    0.4234   -0.4046   -0.1600    1.0422   -0.0674    0.0697    0.2892   -0.0001
+
+ 
+std. err. =
+    0.0000    0.0051    0.0038    0.0016    0.0013    0.0015    0.0018    0.0001    0.0000    0.0001    0.0000
+
+ 
+l(r,x) =
+  -2.9068e+03
+
+ 
+l(r) =
+  -1.7129e+03
+
+ 
+pi =
+    0.9996
+
+ 
+rho =
+   -0.2354
+
+ 
+rho+ =
+    0.1698
+
+ 
+rho- =
+   -0.4275
+
+ 
+---------------------
+(2) Close-to-close returns 
+ 
+---------------------
+GARCH(1,1) Model
+ 
+[omega, beta1, alpha] =
+    0.1252    0.5092    0.4393
+
+ 
+std. err. =
+    0.1485    0.0668    0.0301
+
+ 
+l(r) =
+  -1.3189e+03
+
+ 
+pi =
+    0.9485
+
+ 
+---------------------
+RealGARCH(1,1) Model
+ 
+[omega, beta1, gamma1, xi, phi, tau1, tau2, sig2_u] =
+    0.0891    0.4783    0.8704   -1.3870    0.5004    1.3221   -0.1292    0.0188
+
+ 
+std. err. =
+    0.0023    0.0013    0.0034    0.0024    0.0000    0.0026    0.0006    0.0000
+
+ 
+l(r,x) =
+ -472.2992
+
+ 
+l(r) =
+  -1.3231e+03
+
+ 
+pi =
+    0.9139
+
+ 
+rho =
+    0.9098
+
+ 
+rho+ =
+    0.9098
+
+ 
+rho- =
+   NaN
+
+ 
+---------------------
+RealGARCH(1,2) Model
+ 
+[omega, beta1, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u] =
+    0.0973    0.3695    0.8030    0.2302   -1.4087    0.5002    1.3444   -0.1377    0.0185
+
+ 
+std. err. =
+   1.0e+04 *
+
+    0.0365    1.8463    0.9232    0.1216    1.0708    2.3784    0.4731    1.9203    0.0000
+
+ 
+l(r,x) =
+ -467.3919
+
+ 
+l(r) =
+  -1.3272e+03
+
+ 
+pi =
+    0.8863
+
+ 
+rho =
+    0.9130
+
+ 
+rho+ =
+    0.9130
+
+ 
+rho- =
+   NaN
+
+ 
+---------------------
+RealGARCH(2,1) Model
+ 
+[omega, beta1, beta2, gamma1, xi, phi, tau1, tau2, sig2_u] =
+    0.0423    1.1524   -0.5521    0.5993   -1.6156    0.4969    1.5611   -0.2151    0.0159
+
+ 
+std. err. =
+    0.0013    0.0022    0.0031    0.0014    0.0057    0.0000    0.0075    0.0011    0.0000
+
+ 
+l(r,x) =
+ -393.7187
+
+ 
+l(r) =
+  -1.3679e+03
+
+ 
+pi =
+    0.8980
+
+ 
+rho =
+    0.9235
+
+ 
+rho+ =
+    0.9235
+
+ 
+rho- =
+   NaN
+
+ 
+---------------------
+RealGARCH(2,2) Model
+ 
+[omega, beta1, beta2, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u] =
+   -0.0014    1.3367   -0.3338    0.8369   -0.8432   -1.4411    0.4961    1.3760   -0.1620    0.0152
+
+ 
+std. err. =
+   1.0e-03 *
+
+    0.0000    0.0006    0.0007    0.4478    0.4460    0.1078    0.0050    0.0915    0.0478    0.0089
+
+ 
+l(r,x) =
+ -326.5562
+
+ 
+l(r) =
+  -1.3295e+03
+
+ 
+pi =
+    0.9998
+
+ 
+rho =
+    0.9306
+
+ 
+rho+ =
+    0.9306
+
+ 
+rho- =
+   NaN
+
+ 
+---------------------
+RealGARCH(2,2) Model without leverage
+ 
+[omega, beta1, beta2, gamma1, gamma2, xi, phi, sig2_u] =
+    0.0123    1.3522   -0.3932    0.8721   -0.7963   -0.1868    0.5199    0.3364
+
+ 
+std. err. =
+    0.0087    0.5992    0.1461    0.2774    1.0379    0.0774    0.0619    0.0008
+
+ 
+l(r,x) =
+  -2.6247e+03
+
+ 
+l(r) =
+  -1.3177e+03
+
+ 
+pi =
+    0.9985
+
+ 
+---------------------
+RealGARCH(2,2) Model with lagged returns
+ 
+[omega, beta1, beta2, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u, alpha] =
+   -0.0014    1.3038   -0.3008    0.9003   -0.9084   -1.4633    0.4957    1.3979   -0.1646    0.0158    0.0008
+
+ 
+std. err. =
+    0.0000    0.0000    0.0000    0.0002    0.0000    0.0011    0.0000    0.0016    0.0001    0.0000    0.0001
+
+ 
+l(r,x) =
+ -331.9459
+
+ 
+l(r) =
+  -1.3224e+03
+
+ 
+pi =
+    0.9998
+
+ 
+rho =
+    0.9294
+
+ 
+rho+ =
+    0.9294
+
+ 
+rho- =
+   NaN
+
+ 
+---------------------
+=================================================================
+ 
+Table 3: Log-linear RealGARCH(1,2) Model
+ 
+----------------------------
+{未定义函数或变量 'data_name'。
+
+出错 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('a_main', 'C:\Users\user\Desktop\2018秋高计I\Homework\Advanced EM HW3\Assignment_03\code\a_main.m', 109)" style="font-weight:bold">a_main</a> (<a href="matlab: opentoline('C:\Users\user\Desktop\2018秋高计I\Homework\Advanced EM HW3\Assignment_03\code\a_main.m',109,0)">line 109</a>)
+	fprintf('%s\n',data_name);
+} 
+Data_names = ['AA', 'AIG', 'AXP', 'BA', 'BAC', 'C', 'CAT', 'CVX', 'DD', 'DIS', 'GE', 'GM', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'KO', 'MCD', 'MMM', 'MRK', 'MSFT', 'PG',  'T', 'UTX', 'VZ', 'WMT', 'XOM', 'SPY'];
+data_num = length(Data_names);
+
+Data_names = ['AA'; 'AIG'; 'AXP'; 'BA'; 'BAC'; 'C'; 'CAT'; 'CVX'; 'DD'; 'DIS'; 'GE'; 'GM'; 'HD'; 'IBM'; 'INTC'; 'JNJ'; 'JPM'; 'KO'; 'MCD'; 'MMM'; 'MRK'; 'MSFT'; 'PG';  'T'; 'UTX'; 'VZ'; 'WMT'; 'XOM'; 'SPY'];
+{要串联的数组的维度不一致。
+} 
+Data_names = {'AA', 'AIG', 'AXP', 'BA', 'BAC', 'C', 'CAT', 'CVX', 'DD', 'DIS', 'GE', 'GM', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'KO', 'MCD', 'MMM', 'MRK', 'MSFT', 'PG',  'T', 'UTX', 'VZ', 'WMT', 'XOM', 'SPY'};
+data_num = length(Data_names);
+
+
+data_name = Data_names{1};
+data_path = ['hhs_data\\', data_name, '.csv' ];
+data_path = ['hhs_data\', data_name, '.csv' ];
+clear all
+clc
+Data_names = {'AA', 'AIG', 'AXP', 'BA', 'BAC', 'C', 'CAT', 'CVX', 'DD', 'DIS', 'GE', 'GM', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'KO', 'MCD', 'MMM', 'MRK', 'MSFT', 'PG',  'T', 'UTX', 'VZ', 'WMT', 'XOM', 'SPY'};
+data_num = length(Data_names);
+
+for data_id = 1 : data_num
+	data_name = Data_names{data_id};
+	data_path = ['hhs_data\', data_name, '.csv' ];
+
+	clear all
+	fprintf('----------------------------\n');
+	fprintf('%s\n',data_name);
+	data=csvread(data_path);
+	date=data(:,1);
+	ocret=data((date<20080000),2);
+	x=data((date<20080000),3);
+	[~,~,~,~,~,~,~,~,~,~,~,~,~]=RG12(ocret,x,1);	
+end
+----------------------------
+{未定义函数或变量 'data_name'。
+} 
+Data_names = {'AA', 'AIG', 'AXP', 'BA', 'BAC', 'C', 'CAT', 'CVX', 'DD', 'DIS', 'GE', 'GM', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'KO', 'MCD', 'MMM', 'MRK', 'MSFT', 'PG',  'T', 'UTX', 'VZ', 'WMT', 'XOM', 'SPY'};
+data_num = length(Data_names);
+data_id =1;
+data_name = Data_names{data_id};
+	data_path = ['hhs_data\', data_name, '.csv' ];
+a_main
+[警告: 未找到文件或者权限被拒绝] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('a_main', 'C:\Users\user\Desktop\2018秋高计I\Homework\Advanced EM HW3\Assignment_03\code\a_main.m', 12)" style="font-weight:bold">a_main</a> (<a href="matlab: opentoline('C:\Users\user\Desktop\2018秋高计I\Homework\Advanced EM HW3\Assignment_03\code\a_main.m',12,0)">line 12</a>)] 
+***********************************************************************
+ 
+Assignment 3 for Advanced Econometrics (1)
+Research Replication
+ 
+Xingyu Li    1400017425    Yuanpei College, Peking University
+ 
+Original Work:
+Hansen, P. R., Huang, Z., & Shek, H. H. (2012). Realized GARCH:
+A joint model for returns and realized measures of volatility.
+Journal of Applied Econometrics, 27(6), 877-906.
+ 
+***********************************************************************
+ 
+=================================================================
+ 
+Table 2: Log-linear Models for SPY
+ 
+(1) Open-to-close returns 
+ 
+---------------------
+GARCH(1,1) Model
+ 
+[omega, beta1, alpha] =
+    0.0233    0.9723    0.0170
+
+ 
+std. err. =
+    3.1586    0.0094    0.0312
+
+ 
+l(r) =
+  -1.7827e+03
+
+ 
+pi =
+    0.9893
+
+ 
+---------------------
+RealGARCH(1,1) Model
+ 
+[omega, beta1, gamma1, xi, phi, tau1, tau2, sig2_u] =
+    0.0590    0.5508    0.4091   -0.1801    1.0367   -0.0669    0.0723    0.2928
+
+ 
+std. err. =
+    0.0004    0.0000    0.0003    0.0009    0.0010    0.0029    0.0001    0.0003
+
+ 
+l(r,x) =
+  -2.9183e+03
+
+ 
+l(r) =
+  -1.7152e+03
+
+ 
+pi =
+    0.9750
+
+ 
+rho =
+   -0.2325
+
+ 
+rho+ =
+    0.1782
+
+ 
+rho- =
+   -0.4311
+
+ 
+---------------------
+RealGARCH(1,2) Model
+ 
+[omega, beta1, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u] =
+    0.0403    0.7008    0.4495   -0.1748   -0.1768    1.0384   -0.0676    0.0699    0.2908
+
+ 
+std. err. =
+    0.0016    0.0239    0.0027    0.0430    0.0181    0.0118    0.0018    0.0068    0.0002
+
+ 
+l(r,x) =
+  -2.9116e+03
+
+ 
+l(r) =
+  -1.7136e+03
+
+ 
+pi =
+    0.9861
+
+ 
+rho =
+   -0.2354
+
+ 
+rho+ =
+    0.1679
+
+ 
+rho- =
+   -0.4309
+
+ 
+---------------------
+RealGARCH(2,1) Model
+ 
+[omega, beta1, beta2, gamma1, xi, phi, tau1, tau2, sig2_u] =
+    0.0628    0.3986    0.1307    0.4305   -0.1793    1.0370   -0.0674    0.0713    0.2916
+
+ 
+std. err. =
+    0.0001    0.0018    0.0013    0.0017    0.0003    0.0023    0.0002    0.0000    0.0001
+
+ 
+l(r,x) =
+  -2.9147e+03
+
+ 
+l(r) =
+  -1.7146e+03
+
+ 
+pi =
+    0.9757
+
+ 
+rho =
+   -0.2343
+
+ 
+rho+ =
+    0.1735
+
+ 
+rho- =
+   -0.4316
+
+ 
+---------------------
+RealGARCH(2,2) Model
+ 
+[omega, beta1, beta2, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u] =
+    0.0028    1.4200   -0.4405    0.4235   -0.4042   -0.1601    1.0426   -0.0673    0.0697    0.2892
+
+ 
+std. err. =
+    0.0000    0.0067    0.0043    0.0018    0.0011    0.0021    0.0032    0.0001    0.0000    0.0001
+
+ 
+l(r,x) =
+  -2.9068e+03
+
+ 
+l(r) =
+  -1.7130e+03
+
+ 
+pi =
+    0.9996
+
+ 
+rho =
+   -0.2353
+
+ 
+rho+ =
+    0.1699
+
+ 
+rho- =
+   -0.4276
+
+ 
+---------------------
+RealGARCH(2,2) Model without leverage
+ 
+[omega, beta1, beta2, gamma1, gamma2, xi, phi, sig2_u] =
+    0.0080    1.2698   -0.3372    0.4144   -0.3538   -0.1537    1.0715    0.3364
+
+ 
+std. err. =
+    0.0002    0.0376    0.0174    0.0090    0.0116    0.0080    0.0051    0.0004
+
+ 
+l(r,x) =
+  -3.0188e+03
+
+ 
+l(r) =
+  -1.7118e+03
+
+ 
+pi =
+    0.9977
+
+ 
+---------------------
+RealGARCH(2,2) Model with lagged returns
+ 
+[omega, beta1, beta2, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u, alpha] =
+    0.0026    1.4228   -0.4427    0.4234   -0.4046   -0.1600    1.0422   -0.0674    0.0697    0.2892   -0.0001
+
+ 
+std. err. =
+    0.0000    0.0051    0.0038    0.0016    0.0013    0.0015    0.0018    0.0001    0.0000    0.0001    0.0000
+
+ 
+l(r,x) =
+  -2.9068e+03
+
+ 
+l(r) =
+  -1.7129e+03
+
+ 
+pi =
+    0.9996
+
+ 
+rho =
+   -0.2354
+
+ 
+rho+ =
+    0.1698
+
+ 
+rho- =
+   -0.4275
+
+ 
+---------------------
+(2) Close-to-close returns 
+ 
+---------------------
+GARCH(1,1) Model
+ 
+[omega, beta1, alpha] =
+    0.1252    0.5092    0.4393
+
+ 
+std. err. =
+    0.1485    0.0668    0.0301
+
+ 
+l(r) =
+  -1.3189e+03
+
+ 
+pi =
+    0.9485
+
+ 
+---------------------
+RealGARCH(1,1) Model
+ 
+[omega, beta1, gamma1, xi, phi, tau1, tau2, sig2_u] =
+    0.0891    0.4783    0.8704   -1.3870    0.5004    1.3221   -0.1292    0.0188
+
+ 
+std. err. =
+    0.0023    0.0013    0.0034    0.0024    0.0000    0.0026    0.0006    0.0000
+
+ 
+l(r,x) =
+ -472.2992
+
+ 
+l(r) =
+  -1.3231e+03
+
+ 
+pi =
+    0.9139
+
+ 
+rho =
+    0.9098
+
+ 
+rho+ =
+    0.9098
+
+ 
+rho- =
+   NaN
+
+ 
+---------------------
+RealGARCH(1,2) Model
+ 
+[omega, beta1, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u] =
+    0.0973    0.3695    0.8030    0.2302   -1.4087    0.5002    1.3444   -0.1377    0.0185
+
+ 
+std. err. =
+   1.0e+04 *
+
+    0.0365    1.8463    0.9232    0.1216    1.0708    2.3784    0.4731    1.9203    0.0000
+
+ 
+l(r,x) =
+ -467.3919
+
+ 
+l(r) =
+  -1.3272e+03
+
+ 
+pi =
+    0.8863
+
+ 
+rho =
+    0.9130
+
+ 
+rho+ =
+    0.9130
+
+ 
+rho- =
+   NaN
+
+ 
+---------------------
+RealGARCH(2,1) Model
+ 
+[omega, beta1, beta2, gamma1, xi, phi, tau1, tau2, sig2_u] =
+    0.0423    1.1524   -0.5521    0.5993   -1.6156    0.4969    1.5611   -0.2151    0.0159
+
+ 
+std. err. =
+    0.0013    0.0022    0.0031    0.0014    0.0057    0.0000    0.0075    0.0011    0.0000
+
+ 
+l(r,x) =
+ -393.7187
+
+ 
+l(r) =
+  -1.3679e+03
+
+ 
+pi =
+    0.8980
+
+ 
+rho =
+    0.9235
+
+ 
+rho+ =
+    0.9235
+
+ 
+rho- =
+   NaN
+
+ 
+---------------------
+RealGARCH(2,2) Model
+ 
+[omega, beta1, beta2, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u] =
+   -0.0014    1.3367   -0.3338    0.8369   -0.8432   -1.4411    0.4961    1.3760   -0.1620    0.0152
+
+ 
+std. err. =
+   1.0e-03 *
+
+    0.0000    0.0006    0.0007    0.4478    0.4460    0.1078    0.0050    0.0915    0.0478    0.0089
+
+ 
+l(r,x) =
+ -326.5562
+
+ 
+l(r) =
+  -1.3295e+03
+
+ 
+pi =
+    0.9998
+
+ 
+rho =
+    0.9306
+
+ 
+rho+ =
+    0.9306
+
+ 
+rho- =
+   NaN
+
+ 
+---------------------
+RealGARCH(2,2) Model without leverage
+ 
+[omega, beta1, beta2, gamma1, gamma2, xi, phi, sig2_u] =
+    0.0123    1.3522   -0.3932    0.8721   -0.7963   -0.1868    0.5199    0.3364
+
+ 
+std. err. =
+    0.0087    0.5992    0.1461    0.2774    1.0379    0.0774    0.0619    0.0008
+
+ 
+l(r,x) =
+  -2.6247e+03
+
+ 
+l(r) =
+  -1.3177e+03
+
+ 
+pi =
+    0.9985
+
+ 
+---------------------
+RealGARCH(2,2) Model with lagged returns
+ 
+[omega, beta1, beta2, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u, alpha] =
+   -0.0014    1.3038   -0.3008    0.9003   -0.9084   -1.4633    0.4957    1.3979   -0.1646    0.0158    0.0008
+
+ 
+std. err. =
+    0.0000    0.0000    0.0000    0.0002    0.0000    0.0011    0.0000    0.0016    0.0001    0.0000    0.0001
+
+ 
+l(r,x) =
+ -331.9459
+
+ 
+l(r) =
+  -1.3224e+03
+
+ 
+pi =
+    0.9998
+
+ 
+rho =
+    0.9294
+
+ 
+rho+ =
+    0.9294
+
+ 
+rho- =
+   NaN
+
+ 
+---------------------
+=================================================================
+ 
+Table 3: Log-linear RealGARCH(1,2) Model
+ 
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+----------------------------
+if system_dependent('IsDebugMode')==1, dbstep; end
+AA
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+RealGARCH(1,2) Model
+ 
+[omega, beta1, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u] =
+    0.0312    0.7697    0.3226   -0.1409   -0.0739    1.1529   -0.0366    0.0904    0.3183
+
+ 
+std. err. =
+   1.0e-03 *
+
+    0.0139    0.3256    0.1330    0.0178    0.2074    0.1478    0.0584    0.0819    0.1459
+
+ 
+l(r,x) =
+  -4.0467e+03
+
+ 
+l(r) =
+  -2.7810e+03
+
+ 
+pi =
+    0.9792
+
+ 
+rho =
+   -0.1178
+
+ 
+rho+ =
+    0.2403
+
+ 
+rho- =
+   -0.3754
+
+ 
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+----------------------------
+if system_dependent('IsDebugMode')==1, dbstep; end
+AIG
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+RealGARCH(1,2) Model
+ 
+[omega, beta1, gamma1, gamma2, xi, phi, tau1, tau2, sig2_u] =
+    0.0209    0.7316    0.4520   -0.2040   -0.0600    1.0178   -0.0220    0.0420    0.4034
+
+ 
+std. err. =
+    0.0062    0.0170    0.0542    0.0763    0.0145    0.0219    0.0071    0.0005    0.0030
+
+ 
+l(r,x) =
+  -3.8504e+03
+
+ 
+l(r) =
+  -2.4078e+03
+
+ 
+pi =
+    0.9841
+
+ 
+rho =
+   -0.1477
+
+ 
+rho+ =
+    0.3008
+
+ 
+rho- =
+   -0.4871
+
+ 
+<a href="matlab: opentoline('C:\Users\user\Desktop\2018秋高计I\Homework\Advanced EM HW3\Assignment_03\code\a_main.m',104,1)">104 </a>	clear data date ocret x;
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbquit all; end
+clear all;
+
+disp('=================================================================');
+=================================================================
+disp(' ');
+ 
+disp('Table 4: In-sample and out-of-sample likelihood ratio test');
+Table 4: In-sample and out-of-sample likelihood ratio test
+disp(' ');
+ 
+
+Data_names = {'AA', 'AIG', 'AXP', 'BA', 'BAC', 'C', 'CAT', 'CVX', 'DD', 'DIS', 'GE', 'GM', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'KO', 'MCD', 'MMM', 'MRK', 'MSFT', 'PG',  'T', 'UTX', 'VZ', 'WMT', 'XOM', 'SPY'};
+data_num = length(Data_names);
+data_id = 1;
+clear data date ocret ocret_out x x_out;
+
+	data_name = Data_names{data_id};
+    data_path = ['hhs_data','\' data_name, '.csv' ];
+
+	fprintf('----------------------------\n');
+----------------------------
+	fprintf("%s\n",data_name);
+AA
+	data=csvread(data_path);
+	date=data(:,1);
+	ocret=data((date<20080000),2);
+	ocret_out=data((date>20080000),2);
+	x=data((date<20080000),3);
+	x_out=data((date>20080000),3);
+	[~,~,~]=LRtest(ocret,x,ocret_out,x_out);
+ 
+In-sample: 11, 12, 21, 22, 22+, 22*
+   21.4727    6.2233   11.8277    3.3745  187.6004         0
+
+ 
+Out-of-sample: 11, 12, 21, 22, 22+, 22*
+   12.0594    5.0756    8.4119         0    3.1776    1.2901
+
+ 
+Out-of-sample partial:G11, 11, 12, 21, 22, 22+, 22*
+         0    9.8590    5.8935    8.2315    3.0125    3.4692    4.4914
+
+ 
+data_id = 2;
+clear data date ocret ocret_out x x_out;
+
+	data_name = Data_names{data_id};
+    data_path = ['hhs_data','\' data_name, '.csv' ];
+
+	fprintf('----------------------------\n');
+----------------------------
+	fprintf("%s\n",data_name);
+AIG
+	data=csvread(data_path);
+	date=data(:,1);
+	ocret=data((date<20080000),2);
+	ocret_out=data((date>20080000),2);
+	x=data((date<20080000),3);
+	x_out=data((date>20080000),3);
+	[~,~,~]=LRtest(ocret,x,ocret_out,x_out);
+ 
+In-sample: 11, 12, 21, 22, 22+, 22*
+   22.2254   -4.3924    1.1456    3.0703  186.6800         0
+
+ 
+Out-of-sample: 11, 12, 21, 22, 22+, 22*
+    5.3694  -10.6666   -4.6851         0   10.2311    8.7412
+
+ 
+Out-of-sample partial:G11, 11, 12, 21, 22, 22+, 22*
+  122.8167   12.0642    8.7998   10.3154    3.9447    0.0588         0
+
+ 
+clear all;
+close all;
+clc;
+delete assignment03.txt
+[警告: 未找到文件或者权限被拒绝] 
+diary assignment03.txt
+delete assignment03.txt
+[警告: 未找到文件或者权限被拒绝] 
+diary assignment03.txt
+fig=figure;
+fig.PaperSize=[6,4.5];
+fig.PaperPosition=[0.1, 0.1, 5.8, 4.3];
