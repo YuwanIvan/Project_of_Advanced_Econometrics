@@ -376,7 +376,7 @@ fig.PaperPosition=[0.1, 0.1, 5.8, 4.3];
 
 RandStream.setGlobalStream(RandStream('mt19937ar','seed',78364))
 
-data=csvread('hhs_data\SPY.csv');
+data=csvread('hhs_data/SPY.csv');
 date=data(:,1);
 ocret=data((date<20080000),2);
 x=data((date<20080000),3);
@@ -385,13 +385,39 @@ thetah=RG12(ocret,x,0);
 [skew, kurt]=CumRet(thetah,1000);
 lag=0:1:250;
 
+subplot(2,1,1);
 plot(lag',skew,'b-');
+set(gca,'XAxisLocation','origin');
+set (gca, 'XTick', 0:25:250);
+set(gca,'YAxisLocation','origin');
+set (gca, 'YTick', -0.30:0.05:0);
 title('Figure 4(1): Skewness');
+set(gcf,'position',[200,100,400,900]);
+refline([0,-0.05]);
+refline([0,-0.10]);
+refline([0,-0.15]);
+refline([0,-0.20]);
+refline([0,-0.25]);
+refline([0,-0.30]);
 xlabel('lags');
 ylabel('skewness');
 print('-dpdf','Figure_4(1).pdf');
 
+subplot(2,1,2);
 plot(lag',kurt,'b-');
+ylim([2,5.5]);
+set (gca, 'XTick', 0:25:250);
+set(gca,'YAxisLocation','origin');
+set (gca, 'YTick', 2:0.5:5.50);
+set(gcf,'position',[200,100,400,900]);
+refline([0,2.00]);
+refline([0,2.50]);
+refline([0,3.00]);
+refline([0,3.50]);
+refline([0,4.00]);
+refline([0,4.50]);
+refline([0,5.00]);
+refline([0,5.50]);
 title('Figure 4(2): Kurtosis');
 xlabel('lags');
 ylabel('kurtosis');
