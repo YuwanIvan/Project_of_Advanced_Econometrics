@@ -32,6 +32,7 @@ function logf = RG12lind_logf(theta,ret,x)
     % output
     z = ret ./ sqrt(h);
     u = x - ks - ph * (h);
-    logf =  - 0.5 * log(2 * pi) - 0.5 * log(h) - (ret.^2) ./ (2 * h) - 0.5 * log(2 * pi * sig2) - 0.5*(u.^2) ./ sig2;
-    
+
+    logf =  - 0.5 * log(2 * pi) - 0.5 * log(h) - (ret.^2) ./ (2 * h) - 0.5 * log(2 * pi * sig2) - (u.^2) ./ (2*sig2);
+   
 end
