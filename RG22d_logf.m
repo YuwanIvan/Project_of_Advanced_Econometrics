@@ -38,6 +38,6 @@ function logf=RG22d_logf(theta,ret,x)
     u=log(x)-ks-ph*log(h);
     
     logf=-0.5*log(2*pi)-0.5*log(h)-(ret.^2)./(2*h)...
-        -0.5*log(2*pi*sig2)-(u.^2)./sig2;
+        -0.5*log(2*pi*sig2)-0.5*(u.^2)./sig2;
     
 end
