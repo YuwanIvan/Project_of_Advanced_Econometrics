@@ -37,6 +37,6 @@ function logf = RG12N_logf(theta,ret,x)
     % output
     z = ret ./ sqrt(h);
     u = log(x) - ks - ph * log(h) - tau1 * z - tau2 * (z.^2 - 1) - tau3 * (z.^3 - 3 * z) - tau4 * (z.^4 - 6 * z.^2 + 3); 
-    logf = -0.5 * log(2 * pi) - 0.5 * log(h) - (ret.^2) ./ (2 * h) - 0.5 * log(2 * pi * sig2) - (u.^2) ./ sig2;
+    logf = -0.5 * log(2 * pi) - 0.5 * log(h) - (ret.^2) ./ (2 * h) - 0.5 * log(2 * pi * sig2) - (u.^2) ./ (2*sig2);
     
 end
